@@ -1,6 +1,6 @@
 using ProgrammaticPipetting, CSV, DataFrames, XLSX
 
-fname = path_example_xlsx()
+#fname = path_example_xlsx()
 
 fname = "Yarrowia_gp_pretest_1.xlsx"
 
@@ -34,10 +34,21 @@ df_1, df_2, maps, map_names = make_flowbot_protocol_001(#
     df_deck,
     well_vol_ml = 2.5, # final volume in 24-well plates
     dead_vol_ml = 0.0; # deprecated
-    tip_min_vol_ml = 100.0,
-    tip_max_vol_ml = 1000.0,
+    tip_min_vol_μl = 100.0,
+    tip_max_vol_μl = 1000.0,
     replicates = replicates
 )
+
+df_1b, df_2b, maps_b, map_names_b = make_flowbot_protocol_001(#
+    df_pipette,
+    df_deck,
+    well_vol_ml = 0.3, # final volume in 24-well plates
+    dead_vol_ml = 0.0; # deprecated
+    tip_min_vol_μl = 100.0,
+    tip_max_vol_μl = 1000.0,
+    replicates = replicates
+)
+
 
 # Export dataframes to CSV file
 CSV.write("flowtest1_1.csv", df_1)
