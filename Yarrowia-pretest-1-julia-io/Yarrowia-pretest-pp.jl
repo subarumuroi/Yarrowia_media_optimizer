@@ -2,20 +2,20 @@
 ## USER PARAMETERS
 # Input spreadsheet of concentrations for the pipetting program to
 # estimate the required stock solutions and construct the volume matrix
-fname_concs = "./Yarrowia-pretest-1/Yarrowia_gp_pretest_1.xlsx"
+fname_concs = "./Yarrowia-pretest-1-julia-io/Yarrowia_gp_pretest_1.xlsx"
 
 # Input deck layouts. The only difference is purpose == 3 for 24/96 well position
-fname_24 = "./Yarrowia-pretest-1/deck-yarrow-pretest-24-well.csv"
-fname_96 = "./Yarrowia-pretest-1/deck-yarrow-pretest-96-well.csv"
+fname_24 = "./Yarrowia-pretest-1-julia-io/deck-yarrow-pretest-24-well.csv"
+fname_96 = "./Yarrowia-pretest-1-julia-io/deck-yarrow-pretest-96-well.csv"
 
 # Output files names
 
-fname_pipette  = "./Yarrowia-pretest-1/yarrowia-pretest-conc-volume-matrix.csv"
-fname_part1    = "./Yarrowia-pretest-1/yarrowia-pretest-flowbot-part-1-pooled.csv"
-fname_part2_24 = "./Yarrowia-pretest-1/yarrowia-pretest-flowbot-part-2-24well.csv"
-fname_part2_96 = "./Yarrowia-pretest-1/yarrowia-pretest-flowbot-part-2-96well.csv"
-fname_deck_24  = "./Yarrowia-pretest-1/yarrowia-pretest-flowbot-deck-tube-layout-24well.xlsx"
-fname_deck_96  = "./Yarrowia-pretest-1/yarrowia-pretest-flowbot-deck-tube-layout-96well.xlsx"
+fname_pipette  = "./Yarrowia-pretest-1-julia-io/yarrowia-pretest-conc-volume-matrix.csv"
+fname_part1    = "./Yarrowia-pretest-1-julia-io/yarrowia-pretest-flowbot-part-1-pooled.csv"
+fname_part2_24 = "./Yarrowia-pretest-1-julia-io/yarrowia-pretest-flowbot-part-2-24well.csv"
+fname_part2_96 = "./Yarrowia-pretest-1-julia-io/yarrowia-pretest-flowbot-part-2-96well.csv"
+fname_deck_24  = "./Yarrowia-pretest-1-julia-io/yarrowia-pretest-flowbot-deck-tube-layout-24well.xlsx"
+fname_deck_96  = "./Yarrowia-pretest-1-julia-io/yarrowia-pretest-flowbot-deck-tube-layout-96well.xlsx"
 
 ### ----------------------------------------------------------------------------
 
