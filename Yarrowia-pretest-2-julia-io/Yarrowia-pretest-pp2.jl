@@ -5,8 +5,8 @@
 fname_concs = "./Yarrowia-pretest-2-julia-io/Yarrowia_gp_pretest_2.xlsx"
 
 # Input deck layouts. The only difference is purpose == 3 for 24/96 well position
-fname_24 = "./Yarrowia-pretest-2-julia-io/deck-yarrow-pretest-24-well.csv"
-fname_96 = "./Yarrowia-pretest-2-julia-io/deck-yarrow-pretest-96-well.csv"
+fname_24 = "./Yarrowia-pretest-2-julia-io/deck-yarrow-24-well.csv"
+fname_96 = "./Yarrowia-pretest-2-julia-io/deck-yarrow-96-well.csv"
 
 # Output files names
 
@@ -26,7 +26,7 @@ using ProgrammaticPipetting, CSV, DataFrames
 
 # Compute required stock solutions and volumes to make a given concentration
 # of pooled media
-df_pipette = estimate_pipette_volumes(fname_concs)
+df_pipette, df_names = estimate_pipette_volumes(fname_concs)
 
 # Load flowbot decks for 24/96 well plate
 df_deck_24 = load_flowbot_deck(fname_24)
@@ -38,8 +38,9 @@ df_deck_96 = load_flowbot_deck(fname_96)
 df_1_24, df_2_24, maps_24, map_names_24 = make_flowbot_protocol_001(#
     df_pipette,
     df_deck_24,
+    df_names,
     well_vol_ml = 2.5, # final volume in 24-well plates
-    dead_vol_ml = 0.0; # deprecated
+    dead_vol_ml = 0.0, # deprecated
     tip_min_vol_μl = 100.0,
     tip_max_vol_μl = 1000.0,
     replicates = 3

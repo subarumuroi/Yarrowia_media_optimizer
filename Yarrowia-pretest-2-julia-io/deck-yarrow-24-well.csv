@@ -1,9 +1,9 @@
 Position,Component,Volume,Rows,Columns,Purpose
 1,Sartorius Tips (10-1000uL),1,8,12,Tips
 2,6-tube rack (50mL),50,2,3,1
-4,Tray,250,1,1,1
+3,Tray,250,1,1,1
+10,15-tube rack (15mL),15,3,5,2
+7,24 Well GP plate,2.5,4,6,3
 5,6-tube rack (50mL),50,2,3,1
 6,6-tube rack (50mL),50,2,3,1
-7,24 Well GP plate,2.5,4,6,3
 9,6-tube rack (50mL),50,2,3,1
-3,15-tube rack (15mL),15,3,5,2
