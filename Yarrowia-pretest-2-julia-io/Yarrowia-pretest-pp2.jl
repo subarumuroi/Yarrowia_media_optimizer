@@ -29,13 +29,31 @@ using ProgrammaticPipetting, CSV, DataFrames
 df_pipette, df_names = estimate_pipette_volumes(fname_concs)
 
 # Load flowbot decks for 24/96 well plate
-df_deck_24 = load_flowbot_deck(fname_24)
-df_deck_96 = load_flowbot_deck(fname_96)
+#df_deck_24 = load_flowbot_deck(fname_24)
+df_deck = load_flowbot_deck(fname_96)
+
+# Replicates
+replicates = 3
+
+# df_1: flowbot instructions for stocks to pooled replicates
+# df_2: flowbot instructions for pooled replicates to individual replicates
+# Maps: mapping of stocks/pooled replicates/individual wells on the plates
+df_1, df_2, df_stocks, df_pooled, df_wells = make_flowbot_protocol_001(#
+    df_pipette,
+    df_deck,
+    df_names;
+    well_vol_ml = 2.5, # final volume in 24-well plates
+    dead_vol_ml = 0.0, # deprecated
+    tip_min_vol_μl = 100.0,
+    tip_max_vol_μl = 1000.0,
+    replicates = replicates
+)
 
 # df_1: flowbot instructions for stocks to pooled replicates
 # df_2: flowbot instructions for pooled replicates to individual wells
 # Maps: mapping of stocks/pooled replicates/individual wells on the plates
-df_1_24, df_2_24, maps_24, map_names_24 = make_flowbot_protocol_001(#
+
+df_1_24, df_2_24, df_pooled_24, df_wells_24 = make_flowbot_protocol_001(#
     df_pipette,
     df_deck_24,
     df_names,
@@ -46,11 +64,14 @@ df_1_24, df_2_24, maps_24, map_names_24 = make_flowbot_protocol_001(#
     replicates = 3
 )
 
-df_1_96, df_2_96, maps_96, map_names_96 = make_flowbot_protocol_001(#
+
+
+df_1_96, df_2_96, df_pooled_96, df_wells_96 = make_flowbot_protocol_001(#
     df_pipette,
     df_deck_96,
+    df_names,
     well_vol_ml = 0.3, # final volume in 24-well plates
-    dead_vol_ml = 0.0; # deprecated
+    dead_vol_ml = 0.0, # deprecated
     tip_min_vol_μl = 100.0,
     tip_max_vol_μl = 1000.0,
     replicates = 3
@@ -64,8 +85,8 @@ CSV.write(fname_pipette,  df_pipette)
 CSV.write(fname_part1,    df_1_24)
 CSV.write(fname_part2_24, df_2_24)
 CSV.write(fname_part2_96, df_2_96)
-write_flowbot_maps(fname_deck_24, maps_24, map_names_24)
-write_flowbot_maps(fname_deck_96, maps_96, map_names_96)
+write_flowbot_maps(fname_deck_24, df_pooled_24, df_wells_24)
+write_flowbot_maps(fname_deck_96, df_pooled_96, df_wells_96)
 ### ----------------------------------------------------------------------------
 
 
