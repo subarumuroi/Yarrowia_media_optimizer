@@ -1,0 +1,68 @@
+{
+    "named_clusters": {
+        "cluster_e1": [
+            "Potassium iodide",
+            "Copper (II) sulphate"
+        ],
+        "cluster_e2": [
+            "Iron sulphate heptahydrate",
+            "Sodium molybdate dihydrate",
+            "Cobalt (II) chloride hexahydrate"
+        ],
+        "cluster_e3": [
+            "Magnesium sulphate heptahydrate",
+            "Manganese (II) chloride dihydrate"
+        ],
+        "cluster_v1": [
+            "Nicotinic acid",
+            "Calcium pantothenate",
+            "Pyridoxine-HCl"
+        ],
+        "cluster_v2": [
+            "Biotin",
+            "Thiamine hydrochloride"
+        ]
+    },
+    "bo_bounds": {
+        "cluster_e1": [
+            -4.687029308505964,
+            -3.6042422396134266
+        ],
+        "cluster_e2": [
+            -3.1892918515691293,
+            -2.5135898693645857
+        ],
+        "cluster_e3": [
+            -2.046754617854112,
+            -1.351185390817926
+        ],
+        "cluster_v1": [
+            -3.342422680822206,
+            -2.7825160557860937
+        ],
+        "cluster_v2": [
+            -4.642181987721351,
+            -3.433031053618084
+        ],
+        "Zinc sulphate heptahydrate": [
+            -3.439332693830263,
+            -1.80099946148011
+        ],
+        "Calcium chloride dihydrate": [
+            -2.5614162301685997,
+            -0.8365051577342866
+        ],
+        "Boric acid": [
+            -3.342422680822206,
+            -2.657577319177794
+        ],
+        "para-aminobenzoic acid": [
+            -4.564271430438563,
+            -3.657577319177794
+        ],
+        "Inositol": [
+            -5.740362689494244,
+            -1.384576047114056
+        ]
+    }
+}
