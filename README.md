@@ -5,4 +5,4 @@
 Uses results from a Growth Profiler. 
 
 Thet tests were primarily for understanding growth profile data from different experimental setups
-including pipelining with Julia code and Julia generated outputs
+including pipelining with Julia code and Julia generated inputs and outputs
